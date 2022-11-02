@@ -1,6 +1,8 @@
 # Mastodon ansible role
 
-This is an ansible role for installing mastodon on comwork cloud
+This is an ansible role for installing mastodon on comwork cloud.
+
+We got our own instance here: https://mastodon.comwork.io
 
 ## Install PostgreSQL on comwork cloud
 
