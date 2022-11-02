@@ -6,6 +6,8 @@ This is an ansible role for installing mastodon on comwork cloud
 
 Install PostgreSQL [this tutorial](https://doc.cloud.comwork.io/docs/tutorials/dbaas).
 
+Don't forget the backup part with [bucket-backup](https://gitlab.comwork.io/oss/bucket-backup), that's important!
+
 ## Init mastodon
 
 Add this role to your infra git repo and add it in the playbook.
