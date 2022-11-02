@@ -4,6 +4,17 @@ This is an ansible role for installing mastodon on comwork cloud.
 
 We got our own instance here: https://mastodon.comwork.io
 
+## Table of content
+
+[[_TOC_]]
+
+## Git repositories
+
+* Main repo: https://gitlab.comwork.io/oss/ansible-iac/mastodon.git
+* Github mirror: https://github.com/idrissneumann/ansible-mastodon.git
+* Gitlab mirror: https://gitlab.com/ineumann/ansible-mastodon.git
+* Froggit mirror: https://lab.frogg.it/ineumann/ansible-mastodon.git
+
 ## Install PostgreSQL on comwork cloud
 
 Install PostgreSQL [this tutorial](https://doc.cloud.comwork.io/docs/tutorials/dbaas).
