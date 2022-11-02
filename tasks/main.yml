@@ -1,6 +1,6 @@
 
 ---
-- name: Create mount dir
+- name: Create mastodon data and backup directories
   become: yes
   ansible.builtin.file:
     path: "{{ item.path }}"
@@ -9,17 +9,19 @@
     recurse: "{{ item.recurse }}"
   with_items:
     - { path: "{{ mastodon_public_path }}", recurse: no, mode: '0777'}
+    - { path: "{{ backup_folder }}", recurse: no, mode: '0777'}
 
-- name: Create mastodon docker-compose file
+- name: Create mastodon files
   become: yes
   template:
     src: "{{ item.template }}.j2"
     dest: "{{ item.path }}/{{ item.template }}"
-    mode: '0644'
+    mode: "{{ item.mode }}"
   with_items:
-    - { template: docker-compose-mastodon.yml , path: "{{ node_home }}" }
-    - { template: mastodon.env , path: "{{ node_home }}" }
+    - { template: docker-compose-mastodon.yml , path: "{{ node_home }}", mode: '0644' }
+    - { template: mastodon-backup.sh , path: "{{ node_home }}", mode: '0777' }
+    - { template: mastodon.env , path: "{{ node_home }}", mode: '0644' }
 
-- name: Run the container
+- name: Run the containers
   become: yes
   command: "docker-compose -f {{ node_home }}/docker-compose-mastodon.yml up -d --force-recreate"

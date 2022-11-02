@@ -1,6 +1,8 @@
 ---
+mastodon_image: tootsuite/mastodon
 mastodon_version: v3.5.3
 mastodon_public_path: /home/cloud/mastodon
+backup_folder: /home/cloud/mastodon_backup
 mastodon_web_port: 3000
 mastodon_streaming_port: 4000
 mastodon_redis_host: mastodon-redis
@@ -14,6 +16,7 @@ mastodon_smtp_port: 587
 mastodon_secret_key: changeit
 mastodon_vapid_private_key: changeit
 mastodon_vapid_public_key: changeit
+mastodon_db_backup_username: backup
 
 mastodon_domain: changeit.com
 mastodon_db_host: 127.0.0.1

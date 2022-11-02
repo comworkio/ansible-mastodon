@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+BACKUP_FOLDER="{{ backup_folder }}"
+
+mkdir -p "${BACKUP_FOLDER}"
+pg_dumpall -U {{ mastodon_db_backup_username }} > "${BACKUP_FOLDER}/backup.sql"
+cp -R "{{ mastodon_public_path }}" "${BACKUP_FOLDER}"

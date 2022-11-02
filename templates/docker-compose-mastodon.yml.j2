@@ -10,7 +10,7 @@ services:
       - ./redis:/data
 
   shell:
-    image: tootsuite/mastodon:{{ mastodon_version }}
+    image: {{ mastodon_image }}:{{ mastodon_version }}
     container_name: mastodon-shell
     env_file: mastodon.env
     command: /bin/bash 
@@ -21,7 +21,7 @@ services:
       - {{ mastodon_public_path }}:/mastodon/public/system
 
   web:
-    image: tootsuite/mastodon:{{ mastodon_version }}
+    image: {{ mastodon_image }}:{{ mastodon_version }}
     container_name: mastodon-web
     restart: always
     env_file: mastodon.env
@@ -36,7 +36,7 @@ services:
       - redis
 
   streaming:
-    image: tootsuite/mastodon:{{ mastodon_version }}
+    image: {{ mastodon_image }}:{{ mastodon_version }}
     container_name: mastodon-streaming
     restart: always
     env_file: mastodon.env
@@ -49,7 +49,7 @@ services:
       - redis
 
   sidekiq:
-    image: tootsuite/mastodon:{{ mastodon_version }}
+    image: {{ mastodon_image }}:{{ mastodon_version }}
     container_name: mastodon-sidekiq
     restart: always
     env_file: mastodon.env
