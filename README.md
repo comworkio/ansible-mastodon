@@ -14,9 +14,15 @@ Don't forget the backup part with [bucket-backup](https://gitlab.comwork.io/oss/
 
 Add this role to your infra git repo and add it in the playbook.
 
-The settings to change are [here](./defaults/main.yml).
+The settings to change are [here](./defaults/main.yml). You have to replace all the value containing `changeit` except those three you'll change after the first deployments:
 
-Then run this command on the server:
+```yaml
+mastodon_secret_key: changeit
+mastodon_vapid_private_key: changeit
+mastodon_vapid_public_key: changeit
+```
+
+Run a first deployment (push on your gitops repo), then run this command on the server:
 
 ```shell
 docker-compose -f docker-compose-mastodon.yml run --rm shell bundle exec rake secret
