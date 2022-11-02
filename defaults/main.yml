@@ -1,0 +1,24 @@
+---
+mastodon_version: v3.5.3
+mastodon_public_path: /home/cloud/mastodon
+mastodon_web_port: 3000
+mastodon_streaming_port: 4000
+mastodon_redis_host: mastodon-redis
+mastodon_redis_port: 6379
+mastodon_db_port: 5432
+mastodon_db_name: mastodon_production
+mastodon_db_user: mastodon
+mastodon_ip_retention_period: 31556952
+mastodon_retion_period: 31556952
+mastodon_smtp_port: 587
+mastodon_secret_key: changeit
+mastodon_vapid_private_key: changeit
+mastodon_vapid_public_key: changeit
+
+mastodon_domain: changeit.com
+mastodon_db_host: 127.0.0.1
+mastodon_db_password: changeit
+mastodon_smtp_host: smtp.changeit.com
+mastodon_smtp_user: changeit
+mastodon_smtp_password: changeit
+mastodon_from_email: changeit@changeit.com

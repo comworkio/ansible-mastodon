@@ -1,0 +1,25 @@
+
+---
+- name: Create mount dir
+  become: yes
+  ansible.builtin.file:
+    path: "{{ item.path }}"
+    state: directory
+    mode: "{{ item.mode }}"
+    recurse: "{{ item.recurse }}"
+  with_items:
+    - { path: "{{ mastodon_public_path }}", recurse: no, mode: '0777'}
+
+- name: Create mastodon docker-compose file
+  become: yes
+  template:
+    src: "{{ item.template }}.j2"
+    dest: "{{ item.path }}/{{ item.template }}"
+    mode: '0644'
+  with_items:
+    - { template: docker-compose-mastodon.yml , path: "{{ node_home }}" }
+    - { template: mastodon.env , path: "{{ node_home }}" }
+
+- name: Run the container
+  become: yes
+  command: "docker-compose -f {{ node_home }}/docker-compose-mastodon.yml up -d --force-recreate"

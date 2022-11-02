@@ -1,0 +1,10 @@
+galaxy_info:
+  role_name: mastodon
+  author: Idriss Neumann
+  description: Install mastodon
+  company: Comwork
+
+  min_ansible_version: 2.2
+
+  platforms:
+    - name: CentOS
