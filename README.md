@@ -55,6 +55,14 @@ Then, run the database migrations:
 docker-compose -f docker-compose-mastodon.yml run --rm shell bundle exec rake db:migrate
 ```
 
+## Set a user as an admin
+
+Run this command on the server:
+
+```shell
+docker-compose -f docker-compose-mastodon.yml run -e USERNAME=idrissneumann --rm shell bundle exec rake db:make_admin
+```
+
 ## Backup your instance
 
 Use [bucket-backup](https://gitlab.comwork.io/oss/bucket-backup), you can refer to the [previous tutorial](https://doc.cloud.comwork.io/docs/tutorials/dbaas) in order to add this role.

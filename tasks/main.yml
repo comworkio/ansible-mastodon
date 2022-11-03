@@ -21,6 +21,7 @@
     - { template: docker-compose-mastodon.yml , path: "{{ node_home }}", mode: '0644' }
     - { template: mastodon-backup.sh , path: "{{ node_home }}", mode: '0777' }
     - { template: mastodon.env , path: "{{ node_home }}", mode: '0644' }
+    - { template: comwork.rake , path: "{{ node_home }}", mode: '0644' }
 
 - name: Run the containers
   become: yes

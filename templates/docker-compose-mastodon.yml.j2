@@ -19,6 +19,7 @@ services:
       - mastodon
     volumes:
       - {{ mastodon_public_path }}:/mastodon/public/system
+      - ./comwork.rake:/opt/mastodon/lib/tasks/comwork.rake:rw
 
   web:
     image: {{ mastodon_image }}:{{ mastodon_version }}
