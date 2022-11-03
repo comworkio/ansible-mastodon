@@ -60,7 +60,7 @@ docker-compose -f docker-compose-mastodon.yml run --rm shell bundle exec rake db
 Run this command on the server:
 
 ```shell
-docker-compose -f docker-compose-mastodon.yml run -e USERNAME=idrissneumann --rm shell bundle exec rake db:make_admin
+docker-compose -f docker-compose-mastodon.yml run -e USERNAME=idrissneumann --rm shell bundle exec rake comwork:make_admin
 ```
 
 ## Backup your instance
