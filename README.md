@@ -15,9 +15,22 @@ We got our own instance here: https://mastodon.comwork.io
 * Gitlab mirror: https://gitlab.com/ineumann/ansible-mastodon.git
 * Froggit mirror: https://lab.frogg.it/ineumann/ansible-mastodon.git
 
-## Install PostgreSQL on comwork cloud
+## Requirements
+
+### Using comwork cloud
 
 Install PostgreSQL [this tutorial](https://doc.cloud.comwork.io/docs/tutorials/dbaas).
+
+### All by yourself
+
+If you do not want to use comworker, you have to install those requirements by yourself (using appropriate ansible roles for example):
+* PostgreSQL
+* Nginx for the reverse proxy
+* Letsencrypt / certbot
+* docker
+* docker-compose
+
+Configure the reverse proxy to expose the port `3000`.
 
 ## Init mastodon
 
