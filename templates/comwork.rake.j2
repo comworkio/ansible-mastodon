@@ -13,6 +13,7 @@ namespace :comwork do
     puts "Congrats! #{user.account.username} is now an admin. \\o/\nNavigate to #{admin_settings_url} to get started"
   end
 
+  desc 'Remove old media files'
   task remove_remote: :environment do
     MediaAttachment.where.not(remote_url: '').where('created_at < ?', {{ mastodon_retention_media_days }}.day.ago ).find_each do |media|
       media.file.destroy
