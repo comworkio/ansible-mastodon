@@ -93,8 +93,11 @@ zip_compress_backup_enable: true
 backup_folder: /home/cloud/mastodon_backup
 backup_zip_file_folder: /home/backups/tmp
 backup_max_retention: 3
+backup_src_file_to_clean: "*"
 ```
 
 Here's what you'll find in a backup archive:
 
 ![dump_content](./img/dump_content.png)
+
+Note: we added a `mastodon_backup_filesystem` set to `false` by default in order to disable the filesystem part and let only the PostgreSQL backup, because it's quickly to heavy. Feel free to set it to `true` if you want still copy the content of the filesystem.
