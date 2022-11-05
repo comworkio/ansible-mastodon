@@ -17,6 +17,8 @@ mastodon_secret_key: changeit
 mastodon_vapid_private_key: changeit
 mastodon_vapid_public_key: changeit
 mastodon_db_backup_username: backup
+mastodon_retention_media_days: 1
+mastodon_backup_filesystem: false
 
 mastodon_domain: changeit.com
 mastodon_db_host: 127.0.0.1

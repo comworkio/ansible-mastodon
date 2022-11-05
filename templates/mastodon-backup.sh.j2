@@ -4,4 +4,7 @@ BACKUP_FOLDER="{{ backup_folder }}"
 
 mkdir -p "${BACKUP_FOLDER}"
 pg_dumpall -U {{ mastodon_db_backup_username }} > "${BACKUP_FOLDER}/backup.sql"
+
+{% if mastodon_backup_filesystem is defined and mastodon_backup_filesystem %}
 cp -R "{{ mastodon_public_path }}" "${BACKUP_FOLDER}"
+{% endif %}

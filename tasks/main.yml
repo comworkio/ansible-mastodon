@@ -26,3 +26,12 @@
 - name: Run the containers
   become: yes
   command: "docker-compose -f {{ node_home }}/docker-compose-mastodon.yml up -d --force-recreate"
+
+- name: Creates clean cron
+  ansible.builtin.cron:
+    name: backup cron
+    minute: "0"
+    hour: "2"
+    user: root
+    job: "bash {{ node_home }}/mastodon-clean.sh"
+    cron_file: ansible_bucket_backup
