@@ -35,4 +35,4 @@
     hour: "2"
     user: root
     job: "bash {{ node_home }}/mastodon-clean.sh"
-    cron_file: ansible_bucket_backup
+    cron_file: ansible_mastodon_clean
