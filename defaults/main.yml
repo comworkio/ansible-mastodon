@@ -1,6 +1,6 @@
 ---
 mastodon_image: tootsuite/mastodon
-mastodon_version: v3.5.3
+mastodon_version: v4.0.2
 mastodon_public_path: /home/cloud/mastodon
 backup_folder: /home/cloud/mastodon_backup
 mastodon_web_port: 3000

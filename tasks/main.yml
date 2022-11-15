@@ -21,12 +21,13 @@
     - { template: docker-compose-mastodon.yml , path: "{{ node_home }}", mode: '0644' }
     - { template: mastodon-backup.sh , path: "{{ node_home }}", mode: '0777' }
     - { template: mastodon-clean.sh , path: "{{ node_home }}", mode: '0777' }
+    - { template: mastodon-run.sh , path: "{{ node_home }}", mode: '0777' }
     - { template: mastodon.env , path: "{{ node_home }}", mode: '0644' }
     - { template: comwork.rake , path: "{{ node_home }}", mode: '0644' }
 
 - name: Run the containers
   become: yes
-  command: "docker-compose -f {{ node_home }}/docker-compose-mastodon.yml up -d --force-recreate"
+  command: "bash {{ node_home }}/mastodon-run.sh"
 
 - name: Creates clean cron
   ansible.builtin.cron:

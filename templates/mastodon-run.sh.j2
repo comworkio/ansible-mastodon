@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+docker-compose -f {{ node_home }}/docker-compose-mastodon.yml run --rm shell bundle exec rake db:migrate
+docker-compose -f {{ node_home }}/docker-compose-mastodon.yml up -d --force-recreate
