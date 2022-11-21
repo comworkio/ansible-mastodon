@@ -15,7 +15,7 @@ namespace :comwork do
 
   desc 'Remove old media files'
   task remove_remote: :environment do
-    MediaAttachment.where.not(remote_url: '').where('created_at < ?', {{ mastodon_retention_media_days }}.day.ago ).find_each do |media|
+    MediaAttachment.where.not(remote_url: '').where('created_at < ?', {{ mastodon_retention_media }}.{{ mastodon_retention_media_unit }}.ago ).find_each do |media|
       media.file.destroy
       media.type = :unknown
       media.save
