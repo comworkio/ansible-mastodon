@@ -12,8 +12,7 @@ We got our own instance here: https://mastodon.comwork.io
 
 * Main repo: https://gitlab.comwork.io/oss/ansible-iac/mastodon.git
 * Github mirror: https://github.com/idrissneumann/ansible-mastodon.git
-* Gitlab mirror: https://gitlab.com/ineumann/ansible-mastodon.git
-* Froggit mirror: https://lab.frogg.it/ineumann/ansible-mastodon.git
+* Gitlab mirror: https://gitlab.com/comworkio/ansible-mastodon.git
 
 ## Requirements
 
